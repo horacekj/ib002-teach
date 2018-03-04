@@ -1,0 +1,89 @@
+\documentclass[12pt,a4paper,portait]{extarticle}
+\usepackage[unicode,colorlinks=true]{hyperref}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{amsmath}
+\usepackage{amssymb} %matematika
+\textwidth 16cm \textheight 24.6cm
+\topmargin -1.3cm 
+\oddsidemargin 0cm
+
+% ALGORITHM typesetting
+\input{../../settings/algorithm_settings_normal}
+
+% Xpatch upavuje sirku sadzby algoritmov
+\input{../../settings/xpatch_settings}
+
+\begin{document}
+\pagestyle{empty}
+\noindent
+
+\newcommand\N{\mathbb{N}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+
+	\begin{center}
+	\begin{procedure}[H]
+		\caption{Printer1($A, n$)}
+		\Input{pole $A$ délky $n$}
+		\BlankLine
+		\For{$i \leftarrow 1$ \KwTo 100000}{
+			\If{$i < n$}{
+				print $A[i]$
+			}
+		}
+	\end{procedure}
+	\end{center}
+
+	\begin{center}
+	\begin{procedure}[H]
+		\caption{Printer2($A, n$)}
+		\Input{pole $A$ délky $n$}
+		\BlankLine
+		\For{$i \leftarrow 1$ \KwTo $n - 1$}{
+			\For{$j \leftarrow i$ \KwTo $i + 1$}{
+				print $A[j]$
+			}
+		}
+	\end{procedure}
+	\end{center}
+
+	\begin{center}
+	\begin{function}[H]
+		\caption{Maximum($A, n$)}
+		\Input{pole $A$ délky $n$}
+		\Output{maximum z~pole $A$}
+		\BlankLine
+		$max \leftarrow A[1]$ \;
+		\For{$i \leftarrow 2$ \KwTo $n$}{
+			\If{$A[i] > max$}{
+				$max \leftarrow A[i]$
+			}
+		}
+		\Return{$max$}
+	\end{function}
+	\end{center}
+
+	\begin{center}
+	\begin{function}[H]
+		\caption{Multiply($x,y$)}
+		\Input{$x \in \Z$, $y \in \N$}
+		\Output{součin $x\cdot y$}
+		\BlankLine
+		$z \leftarrow 0$ \;
+		\While{$y > 0$}{
+			\If{$y$ is odd}{
+				$z \leftarrow z + x$
+			}
+			$x \leftarrow 2 \cdot x$ \;
+			$y \leftarrow \lfloor y / 2 \rfloor$ \;
+		}
+		\Return{$z$}
+	\end{function}
+	\end{center}
+
+\end{document}
