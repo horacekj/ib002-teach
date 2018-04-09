@@ -1,0 +1,46 @@
+\documentclass[20pt,a4paper,landscape]{extarticle}
+\usepackage[unicode,colorlinks=true]{hyperref}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{setspace}
+\textwidth 26.6cm \textheight 16cm
+\topmargin -3.7cm
+\oddsidemargin -1cm
+
+% ALGORITHM typesetting
+\input{../../settings/algorithm_settings}
+
+% Xpatch upavuje sirku sadzby algoritmov
+\input{../../settings/xpatch_settings}
+
+\begin{document}
+\pagestyle{empty}
+\noindent
+
+\begin{procedure}
+\LinesNumberedHidden
+\setstretch{1.5}
+	\caption{LeftRotate($tree,x$)}
+	\Input{strom $tree$ a jeho uzel $x$, který je kořenem rotace}
+	\BlankLine
+	$y \leftarrow \mathit{x.right}$ \;
+	$\mathit{x.right} \leftarrow \mathit{y.left}$ \;
+	\If{$\mathit{y.left} \neq \mathit{nil}$}{
+		$\mathit{y.left.parent} \leftarrow x$
+	}
+	$\mathit{y.parent} \leftarrow \mathit{x.parent}$ \;
+	\uIf{$\mathit{x.parent} = \mathit{nil}$}{
+		$\mathit{tree.root} \leftarrow y$
+	}\uElseIf{$x = \mathit{x.parent.left}$}{
+	$\mathit{x.parent.left} \leftarrow y$
+}\Else{
+$\mathit{x.parent.right} \leftarrow y$
+}
+$\mathit{y.left} \leftarrow x$ \;
+$\mathit{x.parent} \leftarrow y$\;
+\end{procedure}
+
+\end{document}
