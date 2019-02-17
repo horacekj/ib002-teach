@@ -1,6 +1,6 @@
 # Materiály ke cvičením IB002 @ FI MUNI
 
-Příprava byla použita v těch semestrech:
+Příprava byla použita v těchto semestrech:
  * jaro 2018
  * jaro 2019
 
