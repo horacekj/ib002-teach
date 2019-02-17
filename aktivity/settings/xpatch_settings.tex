@@ -1,0 +1,5 @@
+% hack to set the correct width of the algorithm
+\usepackage{../../settings/xpatch}
+\xpretocmd{\algorithm}{\hsize=\linewidth}{}{}
+\xpretocmd{\function}{\hsize=\linewidth}{}{}
+\xpretocmd{\procedure}{\hsize=\linewidth}{}{}

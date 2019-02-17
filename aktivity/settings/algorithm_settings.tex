@@ -1,0 +1,90 @@
+% ALGORITHM typesetting
+\usepackage[noline,tworuled,longend,czech]{../../settings/algorithm2e}
+
+\makeatletter
+\renewcommand{\algocf@caption@boxruled}{%
+  \hrule
+  \hbox to \hsize{%
+    \vrule\hskip-0.4pt
+    \vbox{   
+       \vskip\interspacetitleboxruled%
+       \unhbox\algocf@capbox\hfill
+       \vskip\interspacetitleboxruled
+       }%
+     \hskip-0.4pt\vrule%
+   }\nointerlineskip%
+}%
+\makeatother
+
+\SetKwInput{Input}{vstup}
+\SetKwInput{Output}{výstup}
+\newcommand{\donothing}[1]{#1}
+\SetArgSty{donothing}
+\SetCommentSty{emph}
+\SetFuncSty{textsc}
+\SetProcNameSty{textsc}
+\DontPrintSemicolon
+\SetKwIF{If}{ElseIf}{Else}{if}{then}{else if}{else}{fi}
+\SetKwFor{For}{for}{do}{od}
+\SetKwFor{While}{while}{do}{od}
+
+%SetKwFunctions
+\SetKwFunction{ffbinprint}{BinPrint}
+\SetKwFunction{ffbubblesort}{BubbleSort}
+\SetKwFunction{ffbucketsort}{BucketSort}
+\SetKwFunction{ffbuildheap}{BuildHeap}
+\SetKwFunction{ffcountingsort}{CountingSort}
+\SetKwFunction{ffdecreasekey}{DecreaseKey}
+\SetKwFunction{ffdelete}{Delete}
+\SetKwFunction{ffdeletefixup}{DelteFixUp}
+\SetKwFunction{ffdepth}{Depth}
+\SetKwFunction{ffdequeue}{Dequeue}
+\SetKwFunction{ffenqueue}{Enqueue}
+\SetKwFunction{ffextractmin}{ExtractMin}
+\SetKwFunction{fffib}{Fib}
+\SetKwFunction{ffhash}{Hash}
+\SetKwFunction{ffheapify}{Heapify}
+\SetKwFunction{ffheapsort}{HeapSort}
+\SetKwFunction{ffheight}{Height}
+\SetKwFunction{ffinitialize}{Initialize}
+\SetKwFunction{ffinsert}{Insert}
+\SetKwFunction{ffinsertnonfull}{InsertNonfull}
+\SetKwFunction{ffinsertsort}{InsertSort}
+\SetKwFunction{ffjoin}{Join}
+\SetKwFunction{ffleft}{Left}
+\SetKwFunction{ffleftrotate}{LeftRotate}
+\SetKwFunction{ffmax}{Max}
+\SetKwFunction{ffmaximum}{Maximum}
+\SetKwFunction{ffminimum}{Minimum}
+\SetKwFunction{ffmix}{Mix}
+\SetKwFunction{ffmerge}{Merge}
+\SetKwFunction{ffmergesort}{MergeSort}
+\SetKwFunction{ffnew}{New}
+\SetKwFunction{ffparent}{Parent}
+\SetKwFunction{ffpartition}{Partition}
+\SetKwFunction{ffpop}{Pop}
+\SetKwFunction{ffpush}{Push}
+\SetKwFunction{ffpower}{Power}
+\SetKwFunction{ffpoweriii}{Power3}
+\SetKwFunction{ffpredecessor}{Predecessor}
+\SetKwFunction{ffquicksort}{QuickSort}
+\SetKwFunction{ffradixsort}{RadixSort}
+\SetKwFunction{ffrelax}{Relax}
+\SetKwFunction{ffrelease}{Release}
+\SetKwFunction{ffreverseiterative}{ReverseIterative}
+\SetKwFunction{ffreverserecursive}{ReverseRecursive}
+\SetKwFunction{ffreverserecursiveinplace}{ReverseRecursiveInPlace}
+\SetKwFunction{ffright}{Right}
+\SetKwFunction{ffrightrotate}{RightRotate}
+\SetKwFunction{ffsearch}{Search}
+\SetKwFunction{ffselectsort}{SelectSort}
+\SetKwFunction{ffsoucet}{Soucet}
+\SetKwFunction{ffsplit}{Split}
+\SetKwFunction{ffsplitchild}{SplitChild}
+\SetKwFunction{ffsqrt}{Sqrt}
+\SetKwFunction{ffsuccesor}{Succesor}
+\SetKwFunction{ffsumprint}{SumPrint}
+\SetKwFunction{ffswap}{Swap}
+\SetKwFunction{fftransplant}{Transplant}
+\SetKwFunction{ffbellmanford}{Bellman-Ford}
+\SetKwFunction{ffdijkstra}{Dijkstra}
