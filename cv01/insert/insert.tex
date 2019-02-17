@@ -16,7 +16,10 @@
 % Xpatch upavuje sirku sadzby algoritmov
 \input{../../settings/xpatch_settings}
 
+\AtBeginEnvironment{procedure}{\setstretch{1.5}}
+
 \begin{document}
+\SetInd{0em}{0em}
 \pagestyle{empty}
 \noindent
 
@@ -31,12 +34,9 @@
 $\mathit{new} \leftarrow \ffnew~ Node(\mathit{key})$ \;
 $\mathit{new.next} \leftarrow \mathit{nil}$ \;
 $\mathit{new.prev} \leftarrow \mathit{L.last}$ \;
-\eIf{$\mathit{L.first} = \mathit{nil}$} {
-	$\mathit{L.first} \leftarrow \mathit{new}$ \;
-}
-{
-	$\mathit{L.last.next} \leftarrow \mathit{new}$ \;
-}
+\eIf{$\mathit{L.first} = \mathit{nil}$} { }{ }
+$\mathit{L.first} \leftarrow \mathit{new}$ \;
+$\mathit{L.last.next} \leftarrow \mathit{new}$ \;
 $\mathit{L.last} \leftarrow \mathit{new}$ \;
 \Return{$\mathit{new}$}
 \end{procedure}
