@@ -1,4 +1,4 @@
-\documentclass[14pt,a4paper]{extarticle}
+\documentclass[14pt,a4paper,landscape]{extarticle}
 \usepackage[unicode,colorlinks=true]{hyperref}
 \usepackage[czech]{babel}
 \usepackage[utf8]{inputenc}
@@ -6,17 +6,16 @@
 \usepackage{lmodern}
 \usepackage{graphicx}
 \usepackage{setspace}
-\usepackage{etoolbox}
-\textwidth 19cm \textheight 29cm
-\topmargin -3.5cm
-\oddsidemargin -1.5cm
-\usepackage{multicol}
+\textwidth 26.6cm \textheight 16cm
+\topmargin -2.5cm
+\oddsidemargin -1cm
 
 % ALGORITHM typesetting
 \input{../../settings/algorithm_settings_normal}
 
 % Xpatch upavuje sirku sadzby algoritmov
 \input{../../settings/xpatch_settings}
+\AtBeginEnvironment{procedure}{\setstretch{1.3}}
 
 \begin{document}
 
@@ -24,202 +23,24 @@
 \noindent
 \setlength\parindent{0pt}
 
-Pozor: některé věty jsou špatně a je třeba je orpavit!
-
 \begin{procedure}[H]
-	\caption{Delete1($\mathit{L,node}$)}
-	\Input{seznam $L$ typu $\mathit{List}$, ukazatel $\mathit{node}$ na prvek seznamu, který chceme odstranit }
-	\BlankLine
-	\If{$\mathit{node} = \mathit{nil}$}{
-		\Return{Chyba, byl zadán prázdný ukazatel}
-	}
-	\If{$\mathit{node.prev} \neq \mathit{nil}$}{
-		$\mathit{node.prev.next} \leftarrow \mathit{node.next}$ \;
-	}
-	\If{$\mathit{node.next} \neq \mathit{nil}$}{
-		$\mathit{node.next.prev} \leftarrow \mathit{node.prev}$ \;
-	}
-	\ffrelease{$\mathit{node}$} \tcp{až po úpravě ukazatelů uvolňujeme prvek z~paměti}
-\end{procedure}
-
-\begin{itemize}
-	\setlength{\itemsep}{0em}
-	\item Skončí hezkou chybou, pokud \textit{L = nil}.
-	\item Neumí korektně odstranit první prvek.
-	\item Neumí korektně odstranit poslední prvek.
-	\item Umí korektně odstranit prvek uprostřed.
-	\item Uvolní \textit{node}.
-\end{itemize}
-
-\vspace{0.5em}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{procedure}[H]
-	\caption{Delete2($\mathit{L,node}$)}
-	\Input{seznam $L$ typu $\mathit{List}$, ukazatel $\mathit{node}$ na prvek seznamu, který chceme odstranit }
-	\BlankLine
-	\If{$\mathit{node} = \mathit{nil}$}{
-		\Return{Chyba, byl zadán prázdný ukazatel}
-	}
-	\If{$\mathit{node.prev} = \mathit{nil}$}{
-		$\mathit{L.first} \leftarrow \mathit{node.next}$ \tcp{nemá předchůdce}
-	}
-	\If{$\mathit{node.next} = \mathit{nil}$}{
-		$\mathit{L.last} \leftarrow \mathit{node.prev}$ \tcp{nemá následníka}
-	}
-\end{procedure}
-
-\begin{itemize}
-	\setlength{\itemsep}{0em}
-	\item Skončí hezkou chybou, pokud \textit{L = nil}.
-	\item Umí korektně odstranit první prvek.
-	\item Umí korektně odstranit poslední prvek.
-	\item Neumí korektně odstranit prvek uprostřed.
-	\item Neuvolní \textit{node}.
-\end{itemize}
-
-\vspace{1em}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{procedure}[H]
-	\caption{Delete3($\mathit{L,node}$)}
+	\Large
+	\caption{Delete($\mathit{L,node}$)}
 	\Input{seznam $L$ typu $\mathit{List}$, ukazatel $\mathit{node}$ na prvek seznamu, který chceme odstranit }
 	\BlankLine
 	\eIf{$\mathit{node.prev} = \mathit{nil}$}{
-		$\mathit{L.first} \leftarrow \mathit{node.next}$ \tcp{nemá předchůdce}
+		 
 	}
 	{
-		$\mathit{node.next.next} \leftarrow \mathit{node.prev}$ \;
+		 
 	}
 	\eIf{$\mathit{node.next} = \mathit{nil}$}{
-		$\mathit{L.last} \leftarrow \mathit{node.prev}$ \tcp{nemá následníka}
+		 
 	}
 	{
-		$\mathit{node.prev.prev} \leftarrow \mathit{node.next}$ \;
+		 
 	}
 	\ffrelease{$\mathit{node}$} \tcp{až po úpravě ukazatelů uvolňujeme prvek z~paměti}
 \end{procedure}
-
-\begin{itemize}
-	\setlength{\itemsep}{0em}
-	\item Skončí škaredou chybou, pokud \textit{L = nil}.
-	\item Umí korektně odstranit první prvek.
-	\item Umí korektně odstranit poslední prvek.
-	\item Neumí korektně odstranit prvek uprostřed.
-	\item Uvolní \textit{node}.
-\end{itemize}
-
-\vspace{1em}
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-\begin{procedure}[H]
-	\caption{Delete4($\mathit{L,node}$)}
-	\Input{seznam $L$ typu $\mathit{List}$, ukazatel $\mathit{node}$ na prvek seznamu, který chceme odstranit }
-	\BlankLine
-	\If{$\mathit{node} = \mathit{nil}$}{
-		\Return{Chyba, byl zadán prázdný ukazatel}
-	}
-	\eIf{$\mathit{node.prev} = \mathit{nil}$}{
-		$\mathit{L.first} \leftarrow \mathit{node.prev}$ \tcp{nemá předchůdce}
-	}
-	{
-		$\mathit{node.prev.next} \leftarrow \mathit{node.prev}$ \;
-	}
-	\eIf{$\mathit{node.next} = \mathit{nil}$}{
-		$\mathit{L.last} \leftarrow \mathit{node.prev}$ \tcp{nemá následníka}
-	}
-	{
-		$\mathit{node.next.prev} \leftarrow \mathit{node.prev}$ \;
-	}
-	\ffrelease{$\mathit{node}$} \tcp{až po úpravě ukazatelů uvolňujeme prvek z~paměti}
-\end{procedure}
-
-\begin{itemize}
-	\setlength{\itemsep}{0em}
-	\item Skončí hezkou chybou, pokud \textit{L = nil}.
-	\item Neumí korektně odstranit první prvek.
-	\item Umí korektně odstranit poslední prvek.
-	\item Neumí korektně odstranit prvek uprostřed.
-	\item Uvolní \textit{node}.
-\end{itemize}
-
-\vspace{1em}
-
-\newpage
-
-\Large
-
-\setlength{\parskip}{1em}
-\centering
-
-\begin{multicols}{2}
-
-Uvolní \textit{node}.
-
-Uvolní \textit{node}.
-
-Uvolní \textit{node}.
-
-Neuvolní \textit{node}.
-
-Neuvolní \textit{node}.
-
-Neuvolní \textit{node}.
-
-\end{multicols}
-
-Umí korektně odstranit první prvek.
-
-Umí korektně odstranit první prvek.
-
-Umí korektně odstranit první prvek.
-
-Neumí korektně odstranit první prvek.
-
-Neumí korektně odstranit první prvek.
-
-Neumí korektně odstranit první prvek.
-
-
-Umí korektně odstranit poslední prvek.
-
-Umí korektně odstranit poslední prvek.
-
-Umí korektně odstranit poslední prvek.
-
-Neumí korektně odstranit poslední prvek.
-
-Neumí korektně odstranit poslední prvek.
-
-Neumí korektně odstranit poslední prvek.
-
-
-Umí korektně odstranit prvek uprostřed.
-
-Umí korektně odstranit prvek uprostřed.
-
-Umí korektně odstranit prvek uprostřed.
-
-Neumí korektně odstranit prvek uprostřed.
-
-Neumí korektně odstranit prvek uprostřed.
-
-Neumí korektně odstranit prvek uprostřed.
-
-
-Skončí škaredou chybou, pokud \textit{L = nil}.
-
-Skončí škaredou chybou, pokud \textit{L = nil}.
-
-Skončí škaredou chybou, pokud \textit{L = nil}.
-
-Skončí hezkou chybou, pokud \textit{L = nil}.
-
-Skončí hezkou chybou, pokud \textit{L = nil}.
-
-Skončí hezkou chybou, pokud \textit{L = nil}.
 
 \end{document}
