@@ -10,5 +10,5 @@ Příprava byla použita v těch semestrech:
 
 ### Plány cvičení
 
- * [1. cvičení: Spojovaný seznam, fronta, zásobník](cv/1)
- * [2. cvičení: Algoritmy a korektnost](cv/2)
+ * [1. cvičení: Spojovaný seznam, fronta, zásobník](cv/1.md)
+ * [2. cvičení: Algoritmy a korektnost](cv/2.md)
