@@ -16,9 +16,10 @@ Příprava byla použita v těchto semestrech:
  * [4. cvičení: Rekurze](cv/4.md)
  * [5. cvičení: Řadicí algoritmy](cv/5.md)
  * [6. cvičení: Halda a prioritní fronta](cv/6.md)
- *  7. cvičení: Binární vyhledávací stromy
- *  8. cvičení: Červeno-černé stromy
- *  9. cvičení: B-stromy
- *  10. cvičení: hašovací tabulka
+ * [7. cvičení: Binární vyhledávací stromy](cv/7.md)
+ * [8. cvičení: Červeno-černé stromy](cv/8.md)
+ * [9. cvičení: B-stromy](cv/9.md)
+ * [10. cvičení: hašovací tabulka](cv/10.md)
  *  11. cvičení: průzkum grafů
- *  12. cvičení: Cesty v grafech
+ * [12. cvičení: Opakovací](cv/12.md)
+ * [13. cvičení: Cesty v grafech](cv/13.md)
