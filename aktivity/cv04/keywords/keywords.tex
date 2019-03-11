@@ -1,0 +1,63 @@
+\documentclass[12pt,a4paper,landscape]{article}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{multicol}
+\usepackage{enumitem}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\textwidth 26.6cm \textheight 19cm
+\topmargin -3cm
+\oddsidemargin -1cm
+
+\begin{document}
+\pagestyle{empty}
+
+\setlength{\parindent}{0pt}
+\setlength{\columnsep}{60pt}
+
+\Large
+
+\begin{multicols}{2}
+\begin{enumerate}
+\item Iterativní algoritmus
+\item Rekurzivní algoritmus
+\item Rozděl a panuj
+\item Složitost rekurzivního algoritmu
+\item Korektnost rekurzivního algoritmu
+\item Strom rekurzivních volání
+\item Master theorem
+\item Substituční metoda
+\item Metoda stromu
+\end{enumerate}
+\end{multicols}
+
+\rule{\linewidth}{1pt}
+
+\begin{multicols}{2}
+\begin{enumerate}[label=\Alph*]
+
+\item zobrazuje jednotlivá rekurzivní volání.
+
+\item je přístup dělení problému na menší podproblémy.
+Sjednocením částečných řešení vyřešíme původní problém. Takové
+algoritmy se často volají rekurzivně.
+\item je metoda odvozování složitosti rekurzivních algoritmů založená na
+jednoduchém dosazení do vzorce..
+\item nejčastěji dokazujeme pomocí matematické indukce vedené vzhledem k počtu
+zanoření rekurze.
+\item nejsnadněji zapíšeme pomocí rekurentní rovnice, která vyjadřuje složitost
+výpočtu na vstupu velikosti $n$ pomocí složitosti výpočtů na vstupech menší
+velikosti.
+\item je takový, který spočívá v~opakování určité své části (bloku).
+\item Zkonstruujeme strom rekurzivních volání, jehož vrcholy ohodnotíme složitostí
+výpočtu na příslušné úrovni rekurze (tj. bez rekurzivně volaných podčástí).
+Výsledná složitost je součtem ohodnocení všech vrcholů stromu.
+\item Uhodneme řešení a dokážeme správnost matematickou indukcí.
+\item opakuje kód prostřednictvím volání sebe sama (obvykle na podproblémech menší
+velikosti). Každý rekurzivní algoritmus lze převést do iterativní podoby.
+\end{enumerate}
+
+\end{multicols}
+
+\end{document}
