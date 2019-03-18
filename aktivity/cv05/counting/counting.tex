@@ -26,16 +26,10 @@
 	\Output{vzestupně seřazené pole $A$ původních prvků}
 	\BlankLine
 
-	\For{$i \leftarrow 2$ \KwTo $k$}{}
-	\For{$i \leftarrow 1$ \KwTo $k$}{}
-	\For{$i \leftarrow n$ \KwDownTo $1$}{}
-	\For{$i \leftarrow 1$ \KwTo $n$}{}
-
-	$\mathit{count}[A[i]] \leftarrow \mathit{count}[A[i]] + 1$\;
-	$B[\mathit{count}[A[i]]] \leftarrow A[i]$ \;
-	$\mathit{count}[A[i]] \leftarrow \mathit{count}[A[i]] - 1$ \;
-	$\mathit{count}[i] \leftarrow \mathit{count}[i] + \mathit{count}[i - 1]$ \;
-	$\mathit{count}[i] \leftarrow 0$ \;
+	\For{$i \leftarrow 1$ \KwTo $k$}{ }
+	\For{$i \leftarrow 1$ \KwTo $n$}{ }
+	\For{$i \leftarrow 2$ \KwTo $k$}{ }
+	\For{$i \leftarrow n$ \KwDownTo $1$}{ \\ }
 
 	\Return{$B$}
 \end{function}
