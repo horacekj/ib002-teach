@@ -20,6 +20,6 @@ Příprava byla použita v těchto semestrech:
  * [8. cvičení: Červeno-černé stromy](cv/8.md)
  * [9. cvičení: B-stromy](cv/9.md)
  * [10. cvičení: hašovací tabulka](cv/10.md)
- *  11. cvičení: průzkum grafů
+ * 11\. cvičení: průzkum grafů
  * [12. cvičení: Opakovací](cv/12.md)
  * [13. cvičení: Cesty v grafech](cv/13.md)
