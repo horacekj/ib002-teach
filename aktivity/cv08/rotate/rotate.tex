@@ -1,4 +1,4 @@
-\documentclass[20pt,a4paper,landscape]{extarticle}
+\documentclass[14pt,a4paper]{extarticle}
 \usepackage[unicode,colorlinks=true]{hyperref}
 \usepackage[czech]{babel}
 \usepackage[utf8]{inputenc}
@@ -6,15 +6,16 @@
 \usepackage{lmodern}
 \usepackage{graphicx}
 \usepackage{setspace}
-\textwidth 26.6cm \textheight 16cm
-\topmargin -3.7cm
+\textwidth 18cm \textheight 26.6cm
+\topmargin -2.7cm
 \oddsidemargin -1cm
 
 % ALGORITHM typesetting
-\input{../../settings/algorithm_settings}
+\input{../../settings/algorithm_settings_normal}
 
 % Xpatch upavuje sirku sadzby algoritmov
 \input{../../settings/xpatch_settings}
+\AtBeginEnvironment{procedure}{\setstretch{1.3}}
 
 \begin{document}
 \pagestyle{empty}
@@ -27,18 +28,14 @@
 	\Input{strom $tree$ a jeho uzel $x$, který je kořenem rotace}
 	\BlankLine
 	$y \leftarrow \mathit{x.right}$ \;
-	$\mathit{x.right} \leftarrow \mathit{y.left}$ \;
+	$\mathit{x.right} \leftarrow$ \;
 	\If{$\mathit{y.left} \neq \mathit{nil}$}{
-		$\mathit{y.left.parent} \leftarrow x$
+		$\mathit{y.left.parent} \leftarrow$
 	}
-	$\mathit{y.parent} \leftarrow \mathit{x.parent}$ \;
-	\uIf{$\mathit{x.parent} = \mathit{nil}$}{
+	$\mathit{y.parent} \leftarrow$ \;
+	\uIf{$\hspace{4cm}$}{
 		$\mathit{tree.root} \leftarrow y$
-	}\uElseIf{$x = \mathit{x.parent.left}$}{
-	$\mathit{x.parent.left} \leftarrow y$
-}\Else{
-$\mathit{x.parent.right} \leftarrow y$
-}
+	}\uElseIf{$x = \mathit{x.parent.left}$}{}\Else{}
 $\mathit{y.left} \leftarrow x$ \;
 $\mathit{x.parent} \leftarrow y$\;
 \end{procedure}
