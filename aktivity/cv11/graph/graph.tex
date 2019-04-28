@@ -1,0 +1,111 @@
+\documentclass[12pt,a4paper]{extarticle}
+\usepackage[unicode,colorlinks=true]{hyperref}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{enumitem}
+\textwidth 17.5cm \textheight 26.6cm
+\topmargin -2cm
+\oddsidemargin -1cm
+
+\usepackage{pgfplots}
+\usetikzlibrary{
+    arrows,
+    chains, fit, shapes,
+    shapes.multipart, calc,
+    shapes.geometric,
+    shapes.arrows,
+    shapes.callouts,
+    matrix,
+    positioning,
+    shadows,
+    backgrounds,
+    decorations.pathmorphing
+}
+\tikzstyle{arrayitem}=[draw,minimum size=0.7cm]
+
+\begin{document}
+\pagestyle{empty}
+\noindent
+
+\tikzset{
+	node/.style = {inner sep=2pt, text centered, font=\sffamily},
+	wnode/.style = {node, circle, black, draw=black, text width=1em, thick},
+	gnode/.style = {node, circle, black, draw=black, fill=black!30!white, text width=1em, outer sep=0pt},
+	bnode/.style = {node, circle, white, font=\sffamily\bfseries, draw=black, fill=black, text width=1em},
+	label/.style = {black, draw=none, fill=none, font=\scriptsize, outer sep=0pt},
+	thick,
+	arr/.style={
+		draw,
+		rectangle split,
+		rectangle split parts=#1, minimum size=13pt,
+		rectangle split part align=left},
+	list/.style={
+				very thick, draw,
+	},
+	->, very thick
+}
+
+\newcommand{\gr}{
+\begin{center}
+	\begin{tikzpicture}[->,>=stealth',shorten >=1pt,auto,node distance=2.8cm,semithick]
+	\node[wnode]	(V)					{$v$};
+	\node[wnode]	(S) [above of=V]	{$s$};
+	\node[wnode]	(W) [right of=V]	{$w$};
+	\node[wnode]	(Q) [above of=W]	{$q$};
+	\node[wnode]	(X) [right of=W]	{$x$};
+	\node[wnode]	(T) [above of=X]	{$t$};
+	\node[wnode]	(Z) [right of=X]	{$z$};
+	\node[wnode]	(Y) [right of=T]	{$y$};
+	\node[wnode]	(R) [right of=Y]	{$r$};
+	\node[wnode]	(U) [right of=Z]	{$u$};
+	
+	\path 
+	(V) edge				node {} (W)
+	(W) edge				node {} (S)
+	(S) edge				node {} (V)
+	(Q) edge				node {} (S)
+		edge				node {} (W)
+		edge				node {} (T)
+	(T) edge				node {} (X)
+		edge				node {} (Y)
+	(Y) edge [bend right]	node {} (Q)
+	(R) edge				node {} (Y)
+		edge				node {} (U)
+	(U) edge				node {} (Y)
+	(X) edge				node {} (Z)
+		edge				node {} (W)
+	(Z) edge [bend right]	node {} (X);
+	\end{tikzpicture}
+\end{center}}
+
+\textbf{11.4}
+
+\begin{enumerate}[label=\alph*)]
+	\item Zjistěte pomocí BFS, zdali existuje cesta z~$q$ do $y$ a určete její délku.
+	\gr
+	\item Jaké vrcholy jste navštívili? Jaký vrchol musíte zvolit jako
+		počáteční, abyste prošli celý graf?
+	\item Určete typ všech hran grafu pomocí průchodu DFS. Pokud vám algoritmus
+		umožní volit z~více vrcholů, vybírejte je v~abecedním pořadí (začněte tedy
+		z~vrcholu $q$).
+	\gr
+	\item Lze z~časových známek získaných z~průchodu v~minulém příkladu
+		zjistit, zda je z~vrcholu $u$ dosažitelný vrchol $w$? Jak obecně
+		pouze z~časových známek určíte, jaké vrcholy jsou dosažitelné ze
+		zadaného vrcholu?
+	\item V~kolika krocích navštívíte vrchol $z$ z~vrcholu $q$ pomocí BFS a
+		DFS? Jde se před započetím prohledávání rozhodnout, který typ prohledávání
+		bude výhodnější?
+	\item Porovnejte časovou i prostorovou složitost BFS a DFS. Jak se liší
+		v~závislosti na podobě grafu? Zadejte graf, ve kterém se složitosti liší.
+	\item Jaký graf projdou průchody do šířky a do hloubky ve stejném pořadí?
+\end{enumerate}
+
+Bonusový graf navíc:
+\gr
+
+\end{document}
