@@ -1,0 +1,152 @@
+\documentclass[12pt,a4paper]{extarticle}
+\usepackage[unicode,colorlinks=true]{hyperref}
+\usepackage[czech]{babel}
+\usepackage[utf8]{inputenc}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{graphicx}
+\usepackage{setspace}
+\usepackage{paralist}
+\textwidth 17.5cm \textheight 26.6cm
+\topmargin -2.5cm
+\oddsidemargin -1cm
+
+% ALGORITHM typesetting
+\input{../../settings/algorithm_settings_normal}
+
+% Xpatch upavuje sirku sadzby algoritmov
+\input{../../settings/xpatch_settings}
+
+\begin{document}
+
+V tomto příkladu uvádíme několik modifikací DFS průchodu. Vstupem je vrchol $u$
+orientovaného grafu. Barvy všech uzlů jsou nastaveny na bílou a časové známky
+jsou na nule. Pro každou modifikaci:
+\begin{compactitem}
+	\item Určete, zda projde celou část grafu dosažitelnou z~vrcholu $u$ v takovém pořadí jako DFS.
+	\item Rozhodněte, jestli nemůže na nějakých grafech cyklit.
+	\item Uvažte, jestli má stejnou časovou a prostorovou složitost jako DFS průchod.
+\end{compactitem}
+
+\begin{enumerate}
+	\item Nepoužívám časové známky:
+
+	\begin{procedure}[H]
+		\caption{NoTimeStampDFS($u$)}
+		\Input{vrchol $u$}
+		\BlankLine
+		$\mathit{u.color} \leftarrow \mathit{gray}$ \;
+		\For{$v \in \mathit{u.successors}$} {
+			\If{$\mathit{v.color} = \mathit{white}$} {
+				\ffNoTimeStampDFS{$v$} \;
+			}
+		}
+		$\mathit{u.color} \leftarrow \mathit{black}$ \;
+	\end{procedure}
+
+	\item Nepoužívám časové známky a černou barvu:
+	
+	\begin{procedure}[H]
+		\caption{NoBlackDFS($u$)}
+		\Input{vrchol $u$}
+		\BlankLine
+		$\mathit{u.color} \leftarrow \mathit{gray}$ \label{line:nobackdfs_first}\;
+		\For{$v \in \mathit{u.successors}$} {
+			\If{$\mathit{v.color} = \mathit{white}$} { \label{line:nobackdfs_fourth}
+				\ffNoBlackDFS{$v$} \;
+			}
+		}
+	\end{procedure}
+
+
+	\item Co se stane, pokud v \ffNoBlackDFS neměníme barvu, ale pamatujeme si navštívené v~množině $\mathit{Visited}$?
+	
+	\begin{procedure}[H]
+		\caption{VisitedDFS($u$, $\mathit{Visited}$)}
+		\Input{vrchol $u$, množina navštívených vrcholů $\mathit{Visited}$}
+		\Output{množina navštívených vrcholů $\mathit{Visited}$}
+		\BlankLine
+		$\mathit{Visited} \leftarrow \mathit{Visited} \cup \{u\}$\;
+		\For{$v \in \mathit{u.successors}$} {
+			\If{$v \not\in \mathit{Visited}$} {
+				$\mathit{Visited} \leftarrow $\ffVisitedDFS{$v$, $\mathit{Visited}$} \;
+			}
+		}
+		\Return $\mathit{Visited}$
+	\end{procedure}
+	
+	\item Nepoužívám šedou barvu:
+
+	\begin{procedure}[H]
+		\caption{NoGrayDFS($u$)}
+		\Input{vrchol $u$}
+		\BlankLine
+		\For{$v \in \mathit{u.successors}$} {
+			\If{$\mathit{v.color} = \mathit{white}$} {
+				\ffNoGrayDFS{$v$} \;
+			}
+		}
+		$\mathit{u.color} \leftarrow \mathit{black}$ \;
+	\end{procedure}
+
+	\item Místo černé barvím na bílo aneb pamatuji si aktuální obsah zásobníku:
+	
+	\begin{procedure}[H]
+		\caption{OnStackDFS($u$)}
+		\Input{vrchol $u$}
+		\BlankLine
+		$\mathit{u.color} \leftarrow \mathit{gray}$ \;
+		\For{$v \in \mathit{u.successors}$} {
+			\If{$\mathit{v.color} = \mathit{white}$} {
+				\ffOnStackDFS{$v$} \;
+			}
+		}
+		$\mathit{u.color} \leftarrow \mathit{white}$ \;
+	\end{procedure}
+
+	\item Nepoužívám barvy:
+
+
+	\begin{procedure}[H]
+		\caption{NoColorRecDFS($u$, $time$)}
+		\Input{vrchol $u$, časová známka $time$}
+		\BlankLine{}
+		$u.d \leftarrow time$ \;
+		\For{$v \in \mathit{u.successors}$} {
+			\If{$\mathit{v.d} = 0 $} {
+				$time \leftarrow $ \ffNoColorRecDFS{$v$, $time+1$} \;
+			}
+		}
+		$u.f \leftarrow time+1$ \;
+		\Return $time+1$\;
+	\end{procedure}
+	\begin{procedure}[H]
+		\caption{NoColorDFS($u$)}
+		\Input{vrchol $u$}
+		\BlankLine{}
+		\ffNoColorRecDFS{$u$, $1$} \;
+	\end{procedure}
+
+	\item DFS je BFS se zásobníkem:
+	
+	\begin{procedure}[H]
+		\caption{StackBFS($u$)}
+		\Input{vrchol $u$}
+		\BlankLine
+		$\mathit{stack} \leftarrow \mathit{empty~stack}$ \;
+		\ffpush{$\mathit{stack}, u$} \;
+		\While{$\mathit{stack}$ is not empty} {
+			$u \leftarrow $ \ffpop{$\mathit{stack}$} \;
+			$\mathit{u.color} \leftarrow \mathit{gray}$ \;
+			\For{$v \in \mathit{u.successors}$} {
+				\If{$\mathit{v.color} = \mathit{white}$} {
+					\ffpush{$\mathit{stack}, v$} \;
+				}
+			}
+			$\mathit{u.color} \leftarrow \mathit{black}$ \;
+		}
+	\end{procedure}
+
+\end{enumerate}
+
+\end{document}
