@@ -3,7 +3,7 @@ TARGET = exam
 
 all: $(TARGET).pdf clean
 
-$(TARGET).pdf: $(TARGET).tex ib002-exam.cls
+$(TARGET).pdf: $(TARGET).tex ib002.cls
 	pdflatex $^
 
 clean:
