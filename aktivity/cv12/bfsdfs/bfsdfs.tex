@@ -58,23 +58,6 @@ jsou na nule. Pro každou modifikaci:
 		}
 	\end{procedure}
 
-
-	\item Co se stane, pokud v \ffNoBlackDFS neměníme barvu, ale pamatujeme si navštívené v~množině $\mathit{Visited}$?
-	
-	\begin{procedure}[H]
-		\caption{VisitedDFS($u$, $\mathit{Visited}$)}
-		\Input{vrchol $u$, množina navštívených vrcholů $\mathit{Visited}$}
-		\Output{množina navštívených vrcholů $\mathit{Visited}$}
-		\BlankLine
-		$\mathit{Visited} \leftarrow \mathit{Visited} \cup \{u\}$\;
-		\For{$v \in \mathit{u.successors}$} {
-			\If{$v \not\in \mathit{Visited}$} {
-				$\mathit{Visited} \leftarrow $\ffVisitedDFS{$v$, $\mathit{Visited}$} \;
-			}
-		}
-		\Return $\mathit{Visited}$
-	\end{procedure}
-	
 	\item Nepoužívám šedou barvu:
 
 	\begin{procedure}[H]
