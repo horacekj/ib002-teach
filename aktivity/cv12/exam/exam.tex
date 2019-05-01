@@ -20,13 +20,18 @@
 \newcommand\Z{\mathbb{Z}}
 \newcommand\R{\mathbb{R}}
 \newcommand\bigO[1]{\mathcal{O}(#1)}
+\newcounter{TaskCounter}
 
-\exercise{1, 25 bodů}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stepcounter{TaskCounter}
+\exercise{\arabic{TaskCounter}, 25 bodů}
 Zapiště algoritmus, který je parciálně korektní vzhledem k~libovolným vstupním
 a výstupním podmínkám.
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\exercise{2, 25 bodů}
+\stepcounter{TaskCounter}
+\exercise{\arabic{TaskCounter}, 25 bodů}
 Do tabulky doplňte symboly P a N podle toho, zda platí (P) nebo neplatí (N), že
 $3n^2 + 5n \in \mathit{\Omega}(f)$, resp. $3n^2 + 5n \in \bigO{f}$ a $3n^2 + 5n
 \in \mathit{\Theta}(f)$, pro funkci $f$ zadanou v~prvním sloupci tabulky.
@@ -47,8 +52,10 @@ $3n^2 + 5n \in \mathit{\Omega}(f)$, resp. $3n^2 + 5n \in \bigO{f}$ a $3n^2 + 5n
 \end{tabular}
 \end{center}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \newpage
-\exercise{3, 25 bodů}
+\stepcounter{TaskCounter}
+\exercise{\arabic{TaskCounter}, 25 bodů}
 Mějme pole $A[1 \dots n]$ seřazených přirozených čísel, které bylo cyklicky
 posunuto o~$k$ pozic doprava. Například pole $[35, 42, 5, 15, 27, 29]$ je pole,
 které bylo cyklicky posunuto o~$k = 2$ pozic, zatímco $[27, 29, 35, 42, 5, 15]$
@@ -61,5 +68,10 @@ $\bigO{1}$.
 	\item Navrhněte algoritmus, který vyhledá zadanou hodnotu v~poli v~čase
 		$\bigO{\log(n)}$ (pokud neznáme $k$).
 \end{compactenum}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\exercise{4, 25 bodů}
+
 
 \end{document}
