@@ -1,0 +1,101 @@
+\documentclass{ib002}
+\usepackage[utf8]{inputenc}
+\usepackage{scrextend}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
+\usepackage{paralist}
+
+%\assignment{}
+%\points{20 }
+\duedate{7.\,5.\,2019}
+%\name{}
+%\uco{}
+
+\setlength{\parindent}{0cm}
+\setlength{\parskip}{3mm plus2pt minus2pt}
+
+\begin{document}
+
+\newcommand\N{\mathbb{N}}
+\newcommand\Z{\mathbb{Z}}
+\newcommand\R{\mathbb{R}}
+\newcommand\bigO[1]{\mathcal{O}(#1)}
+\newcounter{TaskCounter}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\stepcounter{TaskCounter}
+\exercise{\arabic{TaskCounter}: 15 bodů; příklad \stepcounter{TaskCounter}\arabic{TaskCounter}: 20 bodů}
+\textbf{[Příklad 1]}
+Zapište algoritmus, který je parciálně korektní vzhledem k~libovolným vstupním
+a~výstupním podmínkám.
+
+Jelikož můžeme vytvořit výstupní podmínku typu $\psi \equiv false$, zdánlivě
+neexistuje žádná vstupní podmínka, pro kterou by byl algoritmus korektní. Navíc
+náš algoritmus musí být parciálně korektní pro libovolnou vstupní podmínku,
+tedy i pro $true$. To zní vražedně. Avšak vzhledem k~tomu, že vyžadujeme jen
+parciální korektnost, stačí mít jistotu, že algoritmus bude vždy cyklit a nikdy
+neskončí, např. $\mathbf{while} ~1=1~ \mathbf{do ~ od}$.
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\vspace{6cm}
+\textbf{[Příklad 2]}
+Do tabulky doplňte symboly P a N podle toho, zda platí (P) nebo neplatí (N), že
+$3n^2 + 5n \in \mathit{\Omega}(f)$, resp. $3n^2 + 5n \in \bigO{f}$ a $3n^2 + 5n
+\in \mathit{\Theta}(f)$, pro funkci $f$ zadanou v~prvním sloupci tabulky.
+
+\bigskip
+\begin{center}
+\begin{tabular}{|c|c|c|c|}
+	\hline  & & & \\[1.5ex]
+	$f$ & $3n^2 + 5n \in \mathit{\Omega}(f)$
+	  & $3n^2 + 5n \in \bigO{f}$
+	  & $3n^2 + 5n \in \mathit{\Theta}(f)$ \\[1.5ex] 
+	\hline \hline  & & & \\[1.5ex]
+	$n$         & P & N & N \\ [1.5ex] \hline & & & \\[1.5ex]
+	$n^2$       & P & P & P \\ [1.5ex] \hline & & & \\[1.5ex]
+	$n^2\log n$ & N & P & N \\ [1.5ex] \hline & & & \\[1.5ex]
+	$n^{3}$     & N & P & N \\ [1.5ex] \hline & & & \\[1.5ex]
+	$3^n$       & N & P & N \\ [1.5ex] \hline %& & & \\[1.5ex]
+\end{tabular}
+\end{center}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\stepcounter{TaskCounter}
+\exercise{\arabic{TaskCounter}, 25 bodů}
+Mějme pole $A[1 \dots n]$ seřazených přirozených čísel, které bylo cyklicky
+posunuto o~$k$ pozic doprava. Například pole $[35, 42, 5, 15, 27, 29]$ je pole,
+které bylo cyklicky posunuto o~$k = 2$ pozic, zatímco $[27, 29, 35, 42, 5, 15]$
+bylo posunuto o~$k = 4$ pozic. V libovolném poli dokážeme najít maximální prvek
+v~čase $\bigO{n}$. Pokud známe $k$, najdeme maximální prvek z~pole $A$ v~čase
+$\bigO{1}$.
+\begin{compactenum}
+	\item Navrhněte algoritmus, který najde maximum v~čase $\bigO{\log(n)}$,
+		pokud neznáme $k$.
+	\item Navrhněte algoritmus, který vyhledá zadanou hodnotu v~poli v~čase
+		$\bigO{\log(n)}$ (pokud neznáme $k$).
+\end{compactenum}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\newpage
+\stepcounter{TaskCounter}
+\exercise{\arabic{TaskCounter}, 25 bodů}
+Dokažte, že graf obsahující kružnici liché délky nemůže být bipartitní.
+
+Uvažujme kružnici s vrcholy $u \rightarrow v \rightarrow w$. Tento podgraf není
+bipartitní, proto i celý graf není bipartitní. Zdůvodnění: bez újmy na
+obecnosti uvažme rozdělení $B_1 = \{u\}$ a $B_2 = \{v, w\}$. Pak mezi vrcholy
+$v$ a $w$ vede hrana, tedy dané rozdělení nedefinuje bipartitní graf. Důkaz
+by byl analogický pro další 2 případy.
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\newpage
+%\stepcounter{TaskCounter}
+%\exercise{\arabic{TaskCounter}, 25 bodů}
+
+%Je operace \texttt{Delete} v~binárním vyhledávácím stromu komutativní – smazání uzlu
+%$x$ a pak $y$ dává stejný výsledek jako smazání uzlu $y$ a pak $x$? Pokud ano,
+%dokažte to, jinak ukažte protipříklad.
+
+\end{document}

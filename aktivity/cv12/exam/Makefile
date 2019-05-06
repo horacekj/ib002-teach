@@ -1,14 +1,12 @@
-# Change content of this variable to match filename
-TARGET = exam
+all: exam.pdf solution.pdf clean
 
-all: $(TARGET).pdf clean
-
-$(TARGET).pdf: $(TARGET).tex ib002.cls
-	pdflatex $^
+%.pdf: %.tex ib002.cls
+	texfot pdflatex $^
 
 clean:
-	rm -rf $(TARGET).aux $(TARGET).log $(TARGET).out
+	rm -rf *.aux *.log *.out
 
 pdfclean: clean
-	rm -rf $(TARGET).pdf
+	rm -rf *.pdf
 
+.PHONY: all clean pdfclean
