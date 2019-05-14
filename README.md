@@ -23,3 +23,7 @@ Příprava byla použita v těchto semestrech:
  * [11. cvičení: průzkum grafů](cv/11.md)
  * [12. cvičení: Opakovací](cv/12.md)
  * [13. cvičení: Cesty v grafech](cv/13.md)
+
+### Zpětná vazba
+
+ * [2019](feedback-2019.md)
