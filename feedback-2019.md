@@ -10,6 +10,7 @@ na posledním cvičení. Vyplnilo 17 studentů.
  * **Pořádně si pohrát s rozmístěním v učebně**
    *Sedění ve čtveřici mi přišlo ok, ale ne pro ty, kdo museli sedět zády
    k tabuli.*
+ * **Víc důkazů na cvičeních.**
  * Studenti chtějí víc probírat algoritmy z přednášky. Ale to já dělat nebudu.
    Porádně zdůraznit na začátku semestru, že to dělat nebudu a že od nich
    očekávám znalosti. TODO: jak na to?
