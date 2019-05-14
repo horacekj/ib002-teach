@@ -4,7 +4,7 @@ Zde jsou nějaké poznatky ze zpětné vazby, kterou jsem rozdával studentům
 na posledním cvičení. Vyplnilo 17 studentů.
 
  * **Víc rámovat.**
-   "Někdy mám pocit, že vlastně nevím, co jsem si z toho vlastně odnesla.*
+   *Někdy mám pocit, že vlastně nevím, co jsem si z toho vlastně odnesla.*
    Na konec zařadit shrnutí, na začátek myšlenkovou mapu napříč více hodinami
    (například BVS + RB Tree). Dát větší kontext?
  * **Pořádně si pohrát s rozmístěním v učebně**
@@ -17,7 +17,7 @@ na posledním cvičení. Vyplnilo 17 studentů.
    to se nebude dělat a proč.
  * *Udělejte cvičení víc hardcore, ať nás to dostatečně vyděsí, ať se začneme
    učit.*
- * Lidem se líbí hudební podklad.
+ * Studentům se líbí hudební podklad, zvážit větší zařazení.
 
 ## Jaké cvičení bylo
 
@@ -29,6 +29,10 @@ na posledním cvičení. Vyplnilo 17 studentů.
 
  * *Domácí úlohy mi také přišly v pořádku, vypracoval jsem všechny a některé
    byly jednoduché a jiné zase složitější, ale ne nezvládnutelné.*
+ * *Ty krásný barevný obrázky od paní profesorky Černé by mohly taky někde být.*
+ * *Jediné, co se mi nelíbí, je, že za dělaní DÚ nemáme nic, ale za jejich nedělání
+   se nám zvyšuje limit ke zkoušce (což mi přijde jako zbytečné ztížení na to,
+   že domácí úkoly jsou nepovinné.*
 
 ## TODO
 
