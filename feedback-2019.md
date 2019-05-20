@@ -34,6 +34,8 @@ na posledním cvičení. Vyplnilo 17 studentů.
  * *Jediné, co se mi nelíbí, je, že za dělaní DÚ nemáme nic, ale za jejich nedělání
    se nám zvyšuje limit ke zkoušce (což mi přijde jako zbytečné ztížení na to,
    že domácí úkoly jsou nepovinné.*
+ * Přeformulovat věci v interaktivní osnově: splnění úkolů snižuje limit ke
+   zkoušce, nikoliv nesplnění zvyšuje.
 
 ## TODO
 
